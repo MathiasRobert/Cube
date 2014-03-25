@@ -14,7 +14,7 @@
 class GameModel
 {
 private:
-    Niveau *_niveau;
+    Niveau *_niveau; 
     Joueur *_joueur;
     sf::Clock clock;
 
