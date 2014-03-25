@@ -10,10 +10,10 @@
 		C7B7C8B618D77CDD00AFB31D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B7C8B518D77CDD00AFB31D /* Foundation.framework */; };
 		C7B7C8BB18D77CDD00AFB31D /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = C7B7C8BA18D77CDD00AFB31D /* ResourcePath.mm */; };
 		C7B7C8BE18D77CDD00AFB31D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7B7C8BD18D77CDD00AFB31D /* main.cpp */; };
-		C7B7C8C118D77CDD00AFB31D /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7B7C8C018D77CDD00AFB31D /* cute_image.jpg */; };
-		C7B7C8C318D77CDD00AFB31D /* nice_music.ogg in Resources */ = {isa = PBXBuildFile; fileRef = C7B7C8C218D77CDD00AFB31D /* nice_music.ogg */; };
-		C7B7C8C518D77CDD00AFB31D /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7B7C8C418D77CDD00AFB31D /* sansation.ttf */; };
-		C7B7C8C718D77CDD00AFB31D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C7B7C8C618D77CDD00AFB31D /* icon.png */; };
+		C7B7C8CF18D77D5000AFB31D /* GameModel.cc in Sources */ = {isa = PBXBuildFile; fileRef = C7B7C8CD18D77D5000AFB31D /* GameModel.cc */; };
+		C7B7C8D218D77D5F00AFB31D /* GameView.cc in Sources */ = {isa = PBXBuildFile; fileRef = C7B7C8D018D77D5F00AFB31D /* GameView.cc */; };
+		C7B7C8D518D77D9C00AFB31D /* Joueur.cc in Sources */ = {isa = PBXBuildFile; fileRef = C7B7C8D318D77D9C00AFB31D /* Joueur.cc */; };
+		C7B7C8D818D77E4000AFB31D /* Niveau.cc in Sources */ = {isa = PBXBuildFile; fileRef = C7B7C8D618D77E4000AFB31D /* Niveau.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,10 +23,15 @@
 		C7B7C8BA18D77CDD00AFB31D /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
 		C7B7C8BC18D77CDD00AFB31D /* ResourcePath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
 		C7B7C8BD18D77CDD00AFB31D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		C7B7C8C018D77CDD00AFB31D /* cute_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cute_image.jpg; sourceTree = "<group>"; };
-		C7B7C8C218D77CDD00AFB31D /* nice_music.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nice_music.ogg; sourceTree = "<group>"; };
-		C7B7C8C418D77CDD00AFB31D /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
-		C7B7C8C618D77CDD00AFB31D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		C7B7C8CD18D77D5000AFB31D /* GameModel.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameModel.cc; sourceTree = "<group>"; };
+		C7B7C8CE18D77D5000AFB31D /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
+		C7B7C8D018D77D5F00AFB31D /* GameView.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameView.cc; sourceTree = "<group>"; };
+		C7B7C8D118D77D5F00AFB31D /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
+		C7B7C8D318D77D9C00AFB31D /* Joueur.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Joueur.cc; sourceTree = "<group>"; };
+		C7B7C8D418D77D9C00AFB31D /* Joueur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Joueur.h; sourceTree = "<group>"; };
+		C7B7C8D618D77E4000AFB31D /* Niveau.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Niveau.cc; sourceTree = "<group>"; };
+		C7B7C8D718D77E4000AFB31D /* Niveau.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Niveau.h; sourceTree = "<group>"; };
+		C7B7C8DB18D7843300AFB31D /* const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = const.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +77,8 @@
 				C7B7C8BA18D77CDD00AFB31D /* ResourcePath.mm */,
 				C7B7C8BC18D77CDD00AFB31D /* ResourcePath.hpp */,
 				C7B7C8BD18D77CDD00AFB31D /* main.cpp */,
+				C7B7C8DA18D77EC200AFB31D /* src */,
+				C7B7C8D918D77E5500AFB31D /* headers */,
 				C7B7C8BF18D77CDD00AFB31D /* Resources */,
 				C7B7C8B818D77CDD00AFB31D /* Supporting Files */,
 			);
@@ -89,12 +96,31 @@
 		C7B7C8BF18D77CDD00AFB31D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C7B7C8C018D77CDD00AFB31D /* cute_image.jpg */,
-				C7B7C8C218D77CDD00AFB31D /* nice_music.ogg */,
-				C7B7C8C418D77CDD00AFB31D /* sansation.ttf */,
-				C7B7C8C618D77CDD00AFB31D /* icon.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		C7B7C8D918D77E5500AFB31D /* headers */ = {
+			isa = PBXGroup;
+			children = (
+				C7B7C8D418D77D9C00AFB31D /* Joueur.h */,
+				C7B7C8D718D77E4000AFB31D /* Niveau.h */,
+				C7B7C8CE18D77D5000AFB31D /* GameModel.h */,
+				C7B7C8D118D77D5F00AFB31D /* GameView.h */,
+				C7B7C8DB18D7843300AFB31D /* const.h */,
+			);
+			name = headers;
+			sourceTree = "<group>";
+		};
+		C7B7C8DA18D77EC200AFB31D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C7B7C8D318D77D9C00AFB31D /* Joueur.cc */,
+				C7B7C8D618D77E4000AFB31D /* Niveau.cc */,
+				C7B7C8CD18D77D5000AFB31D /* GameModel.cc */,
+				C7B7C8D018D77D5F00AFB31D /* GameView.cc */,
+			);
+			name = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,10 +175,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7B7C8C718D77CDD00AFB31D /* icon.png in Resources */,
-				C7B7C8C518D77CDD00AFB31D /* sansation.ttf in Resources */,
-				C7B7C8C318D77CDD00AFB31D /* nice_music.ogg in Resources */,
-				C7B7C8C118D77CDD00AFB31D /* cute_image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,8 +201,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7B7C8D218D77D5F00AFB31D /* GameView.cc in Sources */,
+				C7B7C8D818D77E4000AFB31D /* Niveau.cc in Sources */,
 				C7B7C8BE18D77CDD00AFB31D /* main.cpp in Sources */,
 				C7B7C8BB18D77CDD00AFB31D /* ResourcePath.mm in Sources */,
+				C7B7C8D518D77D9C00AFB31D /* Joueur.cc in Sources */,
+				C7B7C8CF18D77D5000AFB31D /* GameModel.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +318,7 @@
 		C7B7C8CB18D77CDD00AFB31D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Cube/Cube-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -300,6 +327,7 @@
 		C7B7C8CC18D77CDD00AFB31D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Cube/Cube-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
