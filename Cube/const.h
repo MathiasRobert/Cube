@@ -11,5 +11,6 @@
 
 const int H = 17;
 const int W = 150;
+const int TAILLECUBE = 16*2;
 
 #endif

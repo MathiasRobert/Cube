@@ -10,6 +10,7 @@
 #define __Cube__Joueur__
 
 #include "Niveau.h"
+#include <cmath>
 
 class Joueur
 {
@@ -20,6 +21,13 @@ private:
     sf::RectangleShape _rectShape;
     bool _onGround;
     float _offsetX, _offsetY;
+    
+    const double g = 9.81;
+    const double pi = 3.14;
+    float v_init = 1.5;
+    int angle_init = pi/3;
+    float v_x = cos(angle_init)*v_init;
+    float v_y = sin(angle_init)*v_init;
     
     Niveau *_niveau;
     

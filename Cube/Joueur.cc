@@ -11,8 +11,8 @@
 Joueur::Joueur()
 {
     _vies = 3;
-    _rect = sf::FloatRect(100,13*16,16,32);
-    _rectShape.setSize(sf::Vector2f(16,32));
+    _rect = sf::FloatRect(100,13*TAILLECUBE,TAILLECUBE,TAILLECUBE*2);
+    _rectShape.setSize(sf::Vector2f(TAILLECUBE,TAILLECUBE*2));
     _rectShape.setPosition(_rect.left, _rect.top);
     _rectShape.setFillColor(sf::Color::Red);
     _dx=_dy=0.1;
@@ -62,12 +62,12 @@ void Joueur::setDY(float dy)
 
 void Joueur::mouvement(float time)
 {
-    _rect.left += _dx * time;
+    _rect.left += _dx * time * v_x;
     collision(0);
     
     if (!_onGround)
         _dy = _dy + 0.0005 * time;
-    _rect.top += _dy * time;
+    _rect.top += _dy * time * v_y;
     _onGround=false;
     collision(1);
 
@@ -82,29 +82,29 @@ void Joueur::mouvement(float time)
 void Joueur::collision(int num)
 {
 	
-	for (int i = _rect.top/16 ; i<(_rect.top+_rect.height)/16; i++)
-		for (int j = _rect.left/16; j<(_rect.left+_rect.width)/16; j++)
+	for (int i = _rect.top/TAILLECUBE ; i<(_rect.top+_rect.height)/TAILLECUBE; i++)
+		for (int j = _rect.left/TAILLECUBE; j<(_rect.left+_rect.width)/TAILLECUBE; j++)
         {
-            if ((_niveau->getMap(i, j)=='P') || (_niveau->getMap(i, j)=='k') || (_niveau->getMap(i, j)=='0') || (_niveau->getMap(i, j)=='r') || (_niveau->getMap(i, j)=='t') || (_niveau->getMap(i, j)=='d') || (_niveau->getMap(i, j)=='c') || (_niveau->getMap(i, j)=='g'))
+            if ((_niveau->getMap(i, j)=='P') || (_niveau->getMap(i, j)=='k') || (_niveau->getMap(i, j)=='0'))
             {
                 if (_dy>0 && num==1)
                 {
-                    _rect.top =   i*16 -  _rect.height;
+                    _rect.top =   i*TAILLECUBE -  _rect.height;
                     _dy=0;
                     _onGround=true;
                 }
                 if (_dy<0 && num==1)
                 {
-                    _rect.top = i*16 + 16;
+                    _rect.top = i*TAILLECUBE + TAILLECUBE;
                     _dy=0;
                 }
                 if (_dx>0 && num==0)
                 {
-                    _rect.left =  j*16 -  _rect.width;
+                    _rect.left =  j*TAILLECUBE -  _rect.width;
                 }
                 if (_dx<0 && num==0)
                 {
-                    _rect.left =  j*16 +16;
+                    _rect.left =  j*TAILLECUBE + TAILLECUBE;
                 }
             }
         }

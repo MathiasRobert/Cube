@@ -20,7 +20,7 @@ using namespace std;
 
 int main(int, char const**)
 {
-    GameView *view = new GameView(400,255);
+    GameView *view = new GameView(400*2,255*2);
     GameModel *model = new GameModel;
     view->setModel(model);
     while (view->treatEvents()) {

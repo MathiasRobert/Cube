@@ -13,7 +13,6 @@ using namespace sf;
 GameView::GameView(int w, int h): _w(w), _h(h){
 	_settings.antialiasingLevel = 8;
     _window = new RenderWindow(VideoMode(w, h), "Cube", Style::Close, _settings);
-    _window->setFramerateLimit(100);
     
 }
 
@@ -35,7 +34,7 @@ void GameView::draw(){
     
     _window->clear(Color::White);
     
-    _rectangle.setSize(Vector2f(16,16));
+    _rectangle.setSize(Vector2f(TAILLECUBE,TAILLECUBE));
     _rectangle.setFillColor(Color::Black);
     
     for (int i=0; i<H; i++)
@@ -44,7 +43,7 @@ void GameView::draw(){
         {
             if ((_model->getNiveau()->getMap(i,j)==' ') || (_model->getNiveau()->getMap(i,j)=='0')) continue;
             
-            _rectangle.setPosition((j*16)-offsetX,(i*16)-offsetY);
+            _rectangle.setPosition((j*TAILLECUBE)-offsetX,(i*TAILLECUBE)-offsetY);
             _window->draw(_rectangle);
         }
     }
@@ -71,12 +70,12 @@ bool GameView::treatEvents(){
     
     
     if (Keyboard::isKeyPressed(Keyboard::Left))
-        _model->getJoueur()->setDX(-0.1);
+        _model->getJoueur()->setDX(-0.2);
     if (Keyboard::isKeyPressed(Keyboard::Right))
-        _model->getJoueur()->setDX(0.1);
-    if (Keyboard::isKeyPressed(Keyboard::Up))
+        _model->getJoueur()->setDX(0.2);
+    if (Keyboard::isKeyPressed(Keyboard::Space))
         if (_model->getJoueur()->getOnGround()) {
-            _model->getJoueur()->setDY(-0.27);
+            _model->getJoueur()->setDY(-0.35);
             _model->getJoueur()->setOnGround(false);
         }
     
