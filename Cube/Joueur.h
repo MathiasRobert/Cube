@@ -31,11 +31,14 @@ public:
     
     void setNiveau(Niveau *niveau);
     void setOnGround(bool onGround);
-    void setDX(int dx);
-    void setDY(int dy);
+    void setDX(float dx);
+    void setDY(float dy);
     
     int getVies() const;
     sf::RectangleShape getRectShape() const;
+    int getOffSetX() const;
+    int getOffSetY() const;
+
     
     void collision(int num);
     void mouvement(float time);

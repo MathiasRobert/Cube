@@ -23,8 +23,8 @@ public:
     GameModel();
     ~GameModel();
     
-    Niveau getNiveau() const;
-    Joueur getJoueur() const;
+    Niveau *getNiveau() const;
+    Joueur *getJoueur() const;
     
     void nextStep();
     

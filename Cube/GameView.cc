@@ -28,6 +28,11 @@ void GameView::setModel(GameModel * model){
 
 void GameView::draw(){
     
+    int offsetX = _model->getJoueur()->getOffSetX();
+    int offsetY = _model->getJoueur()->getOffSetY();
+    
+    
+    
     _window->clear(Color::White);
     
     _rectangle.setSize(Vector2f(16,16));
@@ -37,14 +42,14 @@ void GameView::draw(){
     {
         for (int j=0; j<W; j++)
         {
-            if ((_model->getNiveau().getMap(i,j)==' ') || (_model->getNiveau().getMap(i,j)=='0')) continue;
+            if ((_model->getNiveau()->getMap(i,j)==' ') || (_model->getNiveau()->getMap(i,j)=='0')) continue;
             
-            _rectangle.setPosition(j*16,i*16);
+            _rectangle.setPosition((j*16)-offsetX,(i*16)-offsetY);
             _window->draw(_rectangle);
         }
     }
     
-    _window->draw(_model->getJoueur().getRectShape());
+    _window->draw(_model->getJoueur()->getRectShape());
     
     _window->display();
 }
@@ -63,18 +68,19 @@ bool GameView::treatEvents(){
                 result = false;
             }
         }
-        return result;
-    }
+    
     
     if (Keyboard::isKeyPressed(Keyboard::Left))
-        _model->getJoueur().setDX(-0.1);
+        _model->getJoueur()->setDX(-0.1);
     if (Keyboard::isKeyPressed(Keyboard::Right))
-        _model->getJoueur().setDX(0.1);
+        _model->getJoueur()->setDX(0.1);
     if (Keyboard::isKeyPressed(Keyboard::Up))
-        if (_model->getJoueur().getOnGround()) {
-            _model->getJoueur().setDY(-0.27);
-            _model->getJoueur().setOnGround(false);
+        if (_model->getJoueur()->getOnGround()) {
+            _model->getJoueur()->setDY(-0.27);
+            _model->getJoueur()->setOnGround(false);
         }
     
+    return result;
+    }
     return result;
 }

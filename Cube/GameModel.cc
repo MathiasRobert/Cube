@@ -19,13 +19,13 @@ GameModel::~GameModel()
     delete _niveau;
 }
 
-Niveau GameModel::getNiveau() const
+Niveau *GameModel::getNiveau() const
 {
-    return *_niveau;
+    return _niveau;
 }
-Joueur GameModel::getJoueur() const
+Joueur *GameModel::getJoueur() const
 {
-    return *_joueur;
+    return _joueur;
 }
 
 void GameModel::nextStep()
