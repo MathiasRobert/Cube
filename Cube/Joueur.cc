@@ -42,6 +42,10 @@ int Joueur::getOffSetY() const
 {
     return _offsetY;
 }
+bool Joueur::getExplosion() const
+{
+    return _explosion;
+}
 
 void Joueur::setNiveau(Niveau *niveau)
 {
@@ -59,6 +63,10 @@ void Joueur::setDY(float dy)
 {
     _dy = dy;
 }
+void Joueur::setExplosion(bool explosion)
+{
+    _explosion = explosion;
+}
 
 void Joueur::mouvement(float time)
 {
@@ -75,6 +83,12 @@ void Joueur::mouvement(float time)
         _offsetX = _rect.left-200;
     
     _rectShape.setPosition(_rect.left - _offsetX, _rect.top - _offsetY);
+    
+    if (_explosion) {
+        for (int i = 0 ; i < 8 ; i++) {
+            _rectShapeExplo[i].setPosition(_rect.left, _rect.top);
+        }
+    }
     
     _dx=0;
 }

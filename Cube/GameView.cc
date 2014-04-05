@@ -78,7 +78,8 @@ bool GameView::treatEvents(){
             _model->getJoueur()->setDY(-0.35);
             _model->getJoueur()->setOnGround(false);
         }
-    
+    if (Keyboard::isKeyPressed(Keyboard::E))
+        _model->getJoueur()->setExplosion(true);
     return result;
     }
     return result;

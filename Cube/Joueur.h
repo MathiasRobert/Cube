@@ -19,7 +19,10 @@ private:
     float _dx,_dy;
     sf::FloatRect _rect;
     sf::RectangleShape _rectShape;
+    sf::RectangleShape _rectShapeExplo[8];
+
     bool _onGround;
+    bool _explosion;
     float _offsetX, _offsetY;
     
     const double g = 9.81;
@@ -41,11 +44,13 @@ public:
     void setOnGround(bool onGround);
     void setDX(float dx);
     void setDY(float dy);
+    void setExplosion(bool explosion);
     
     int getVies() const;
     sf::RectangleShape getRectShape() const;
     int getOffSetX() const;
     int getOffSetY() const;
+    bool getExplosion() const;
 
     
     void collision(int num);
